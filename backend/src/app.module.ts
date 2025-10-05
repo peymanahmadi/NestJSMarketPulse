@@ -1,12 +1,15 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { HealthModule } from './health/health.module';
 import { SentimentModule } from './sentiment/sentiment.module';
+import { MongooseModule } from '@nestjs/mongoose';
+import { RedisService } from './config/redis.service';
 
 @Module({
-  imports: [HealthModule, SentimentModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    MongooseModule.forRoot('mongodb://localhost:27017/marketpulse'),
+    HealthModule,
+    SentimentModule,
+  ],
+  providers: [RedisService],
 })
 export class AppModule {}
