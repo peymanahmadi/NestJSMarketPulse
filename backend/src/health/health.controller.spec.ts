@@ -12,7 +12,7 @@ describe('HealthController', () => {
     controller = module.get<HealthController>(HealthController);
   });
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
+  it('should return status OK', () => {
+    expect(controller.getHealth()).toEqual({ status: 'OK' });
   });
 });
