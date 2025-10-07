@@ -9,8 +9,8 @@ class SentimentDto {
 @Controller('sentiment')
 export class SentimentController {
   @Post()
-  @ApiOperation({summary: 'Analyze sentiment of text'})
-  @ApiResponse({status: 200, description: 'Sentiment analysis result'})
+  @ApiOperation({ summary: 'Analyze sentiment of text' })
+  @ApiResponse({ status: 200, description: 'Sentiment analysis result' })
   analyzeSentiment(@Body() body: SentimentDto): { sentiment: string } {
     // Mock sentiment analysis
     return { sentiment: 'positive' };

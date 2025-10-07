@@ -4,6 +4,6 @@ import { SentimentService } from './sentiment.service';
 
 @Module({
   controllers: [SentimentController],
-  providers: [SentimentService]
+  providers: [SentimentService],
 })
 export class SentimentModule {}
