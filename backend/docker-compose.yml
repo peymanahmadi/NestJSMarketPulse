@@ -11,7 +11,9 @@ services:
       - NODE_ENV=production
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - MONGO_URI=mongodb://mongodb:27017/marketpulse
+      - MONGODB_URI=mongodb://mongodb:27017/marketpulse
+    volumes:
+      - ./.env:/app/.env
   mongodb:
     image: mongo:latest
     ports:
