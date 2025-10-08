@@ -4,6 +4,8 @@ import { SentimentModule } from './sentiment/sentiment.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { RedisService } from './config/redis.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { DataService } from './data/data.service';
+import { DataModule } from './data/data.module';
 
 @Module({
   imports: [
@@ -20,7 +22,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     }),
     HealthModule,
     SentimentModule,
+    DataModule,
   ],
-  providers: [RedisService],
+  providers: [RedisService, DataService],
 })
 export class AppModule {}
